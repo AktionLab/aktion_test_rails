@@ -3,10 +3,10 @@ require File.expand_path('../lib/aktion_test_rails/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Chris Boertien"]
-  gem.email         = ["chris.boertien@bz-labs.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.email         = ["chris@aktionlab.com"]
+  gem.description   = %q{Subproject of aktion_test, adding rails versions of gems, libraries and rake tasks.}
+  gem.summary       = %{Rails testing setup}
+  gem.homepage      = "http://aktionlab.com"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
