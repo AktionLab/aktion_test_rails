@@ -22,5 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'database_cleaner', '~> 0.8.0'
   gem.add_dependency 'email_spec', '~> 1.2.1'
   gem.add_dependency 'capybara', '~> 1.1.2'
+  gem.add_dependency 'capybara-webkit', '~> 0.12.1'
   gem.add_dependency 'launchy', '~> 2.1.2'
+  gem.add_dependency 'shoulda-matchers', '~> 1.3.0'
 end
