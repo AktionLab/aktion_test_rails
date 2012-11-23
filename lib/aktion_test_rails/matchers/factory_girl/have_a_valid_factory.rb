@@ -11,26 +11,37 @@ module AktionTestRails
         end
 
         def matches?(subject)
-          @subject = subject
           factory_exists? && factory_creates_valid_record?
         end
 
         def failure_message
-          "Expected #{@factory_name} to be a valid factory."
+          message = "Expected :#{@factory_name} to be a valid factory."
+          if factory_exists?
+            if @record.errors.full_messages.any?
+              message << "\n  Failed Validations:"
+              @record.errors.full_messages.each do |error|
+                message << "\n    #{error}"
+              end
+            end
+          else
+            message << "\n  No factory by the name :#{@factory_name} found"
+          end
+          message
         end
 
         def description
-          "has a valid factory named #{@factory_name}"
+          "has a valid factory named :#{@factory_name}"
         end
 
       protected
 
         def factory_exists?
-          ::FactoryGirl.factory_by_name(@factory_name)
+          ::FactoryGirl.factories.registered?(@factory_name)
         end
 
         def factory_creates_valid_record?
-          ::FactoryGirl.build(@factory_name).valid?
+          @record = ::FactoryGirl.build(@factory_name)
+          @record.valid?
         end
       end
     end
