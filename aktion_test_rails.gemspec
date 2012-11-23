@@ -17,12 +17,13 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'aktion_test', '= 0.0.1'
   gem.add_dependency 'rspec-rails', '~> 2.11.0'
-  gem.add_dependency 'cucumber-rails', '~> 1.3.0'
   gem.add_dependency 'factory_girl_rails', '~> 4.0.0'
   gem.add_dependency 'database_cleaner', '~> 0.8.0'
-  gem.add_dependency 'email_spec', '~> 1.2.1'
   gem.add_dependency 'capybara', '~> 1.1.2'
-  gem.add_dependency 'capybara-webkit', '~> 0.12.1'
+  gem.add_dependency 'poltergeist', '~> 1.0.2'
   gem.add_dependency 'launchy', '~> 2.1.2'
   gem.add_dependency 'shoulda-matchers', '~> 1.3.0'
+
+  gem.add_development_dependency 'appraisal', '~> 0.5.1'
+  gem.add_development_dependency 'rails', '~> 3.0'
 end
