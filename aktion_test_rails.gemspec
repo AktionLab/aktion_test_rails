@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = AktionTestRails::VERSION
 
-  gem.add_dependency 'aktion_test', '0.0.2'
+  gem.add_dependency 'aktion_test', '~> 0.0.2'
   gem.add_dependency 'rspec-rails', '~> 2.12.0'
   gem.add_dependency 'factory_girl_rails', '~> 4.1.0'
   gem.add_dependency 'database_cleaner', '~> 0.9.1'
