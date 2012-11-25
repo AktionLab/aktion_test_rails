@@ -25,5 +25,4 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'shoulda-matchers', '~> 1.4.1'
 
   gem.add_development_dependency 'appraisal', '~> 0.5.1'
-  gem.add_development_dependency 'rails', '~> 3.0'
 end
