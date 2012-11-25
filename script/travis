@@ -1,7 +1,0 @@
-#!/bin/bash
-
-bundle show faker >/dev/null
-
-if [ $? -ne 0 ]; then gem install faker; fi
-
-bundle exec rake spec
