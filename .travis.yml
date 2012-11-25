@@ -2,10 +2,10 @@ rvm:
   - 1.9.2
   - 1.9.3
 
-script: "script/travis"
+script: "bundle exec rake"
 
-gemfile:
-  - gemfiles/3.0.gemfile
-  - gemfiles/3.1.gemfile
-  - gemfiles/3.2.gemfile
+#gemfile:
+#  - gemfiles/3.0.gemfile
+#  - gemfiles/3.1.gemfile
+#  - gemfiles/3.2.gemfile
 
