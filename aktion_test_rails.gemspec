@@ -23,8 +23,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'poltergeist', '~> 1.0.2'
   gem.add_dependency 'launchy', '~> 2.1.2'
   gem.add_dependency 'shoulda-matchers', '~> 1.4.1'
-  gem.add_dependency 'rspec', '~> 2.12.0'
-  gem.add_dependency 'faker'
 
   gem.add_development_dependency 'appraisal', '~> 0.5.1'
 end
