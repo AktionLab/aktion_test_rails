@@ -1,3 +1,9 @@
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/tmp/'
+end
+
 TESTAPP_ROOT = File.join(File.dirname(__FILE__), '..', 'tmp', 'testapp')
 FileUtils.rm_rf(TESTAPP_ROOT) if File.exists?(TESTAPP_ROOT)
 `rails new #{TESTAPP_ROOT}`
