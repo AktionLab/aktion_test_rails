@@ -2,7 +2,7 @@ PATH
   remote: /home/chris/code/projects/aktion_test_rails
   specs:
     aktion_test_rails (0.1.1)
-      aktion_test (~> 0.0.2)
+      aktion_test (~> 0.1.0)
       capybara (~> 1.1.3)
       database_cleaner (~> 0.9.1)
       factory_girl_rails (~> 4.1.0)
@@ -42,7 +42,7 @@ GEM
       activesupport (= 3.0.17)
     activesupport (3.0.17)
     addressable (2.3.2)
-    aktion_test (0.0.2)
+    aktion_test (0.1.0)
       factory_girl (~> 4.1.0)
       faker (~> 1.1.2)
       rspec (~> 2.12.0)
