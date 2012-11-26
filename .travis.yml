@@ -4,3 +4,7 @@ rvm:
 
 script: "bundle exec rake"
 
+gemfiles:
+  - gemfiles/3.0.gemfile
+  - gemfiles/3.1.gemfile
+  - gemfiles/3.2.gemfile
