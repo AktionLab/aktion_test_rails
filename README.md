@@ -1,6 +1,7 @@
 # AktionTestRails
 
 [![Build Status](https://secure.travis-ci.org/AktionLab/aktion_test_rails.png?branch=master)](https://travis-ci.org/AktionLab/aktion_test_rails)
+[![Dependency Status](https://gemnasium.com/AktionLab/aktion_test_rails.png)](https://gemnasium.com/AktionLab/aktion_test_rails)
 
 Testing gem that includes a common set of testing gems, along with a suite of rspec matchers
 
