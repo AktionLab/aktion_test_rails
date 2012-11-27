@@ -16,6 +16,10 @@ describe AktionTestRails::Matchers::FactoryGirl::ValidFactoryMatcher do
     User.new.should have_a_valid_factory(:user)
   end
 
+  it 'provides a description for one liners' do
+    described_class.new(:user).description.should == "has a valid factory named :user"
+  end
+
   context "when the factory does not exist" do
     before(:each) { define_model :user }
 
@@ -25,9 +29,9 @@ describe AktionTestRails::Matchers::FactoryGirl::ValidFactoryMatcher do
 
     it "says that the factory does not exist" do
       matcher = described_class.new(:user).tap{|m| m.matches?(User.new)}
-      expected_message = <<-ERROR
-Expected :user to be a valid factory.
-  No factory by the name :user found
+      expected_message = <<-ERROR.strip_heredoc.strip
+        Expected :user to be a valid factory.
+          No factory by the name :user found
       ERROR
       matcher.failure_message.should == expected_message.strip
     end
@@ -51,10 +55,10 @@ Expected :user to be a valid factory.
 
     it "should detail validation errors with the factory" do
       matcher = described_class.new(:user).tap{|m| m.matches?(User.new)}
-      expected_message = <<-ERROR
-Expected :user to be a valid factory.
-  Failed Validations:
-    Name can't be blank
+      expected_message = <<-ERROR.strip_heredoc.strip
+        Expected :user to be a valid factory.
+          Failed Validations:
+            Name can't be blank
       ERROR
       matcher.failure_message.should == expected_message.strip
     end
