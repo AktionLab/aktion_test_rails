@@ -2,9 +2,5 @@ rvm:
   - 1.9.2
   - 1.9.3
 
-script: "bundle exec rake"
+script: "rake"
 
-gemfiles:
-  - gemfiles/3.0.gemfile
-  - gemfiles/3.1.gemfile
-  - gemfiles/3.2.gemfile

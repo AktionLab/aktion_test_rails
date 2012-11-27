@@ -1,8 +1,7 @@
 #!/usr/bin/env rake
-require 'bundler/setup'
+#require 'bundler/setup'
 require "bundler/gem_tasks"
 require 'rspec/core/rake_task'
-require 'appraisal'
 
 RSpec::Core::RakeTask.new do |t|
   t.pattern = "spec/**/*_spec.rb"
@@ -10,9 +9,4 @@ RSpec::Core::RakeTask.new do |t|
   t.verbose = false
 end
 
-desc 'Test the plugin under all supported Rails versions.'
-task :all => ["appraisal:cleanup", "appraisal:install"] do
-  exec('rake appraisal spec')
-end
-
-task :default => [:all]
+task :default => [:spec]
