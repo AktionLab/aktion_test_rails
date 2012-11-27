@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe AktionTestRails::Matchers::FactoryGirl::ValidFactoryMatcher do
-  let(:matcher_class) { AktionTestRails::Matchers::FactoryGirl::ValidFactoryMatcher }
-
   after(:each) do
     FactoryGirl.factories.clear
   end
@@ -26,7 +24,7 @@ describe AktionTestRails::Matchers::FactoryGirl::ValidFactoryMatcher do
     end
 
     it "says that the factory does not exist" do
-      matcher = matcher_class.new(:user).tap{|m| m.matches?(User.new)}
+      matcher = described_class.new(:user).tap{|m| m.matches?(User.new)}
       expected_message = <<-ERROR
 Expected :user to be a valid factory.
   No factory by the name :user found
@@ -52,7 +50,7 @@ Expected :user to be a valid factory.
     end
 
     it "should detail validation errors with the factory" do
-      matcher = matcher_class.new(:user).tap{|m| m.matches?(User.new)}
+      matcher = described_class.new(:user).tap{|m| m.matches?(User.new)}
       expected_message = <<-ERROR
 Expected :user to be a valid factory.
   Failed Validations:
