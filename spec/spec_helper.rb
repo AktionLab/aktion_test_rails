@@ -4,6 +4,7 @@ require 'simplecov'
 
 SimpleCov.start do
   add_filter '/tmp/'
+  add_filter '/spec/'
 end
 
 TESTAPP_ROOT = File.join(File.dirname(__FILE__), 'rails_app')
