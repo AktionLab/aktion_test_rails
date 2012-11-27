@@ -30,18 +30,6 @@ module AktionTestRails
       define_class(class_name, ActiveRecord::Base, &block)
     end
 
-    def define_active_model_class(class_name, options = {}, &block)
-      define_class(class_name) do
-        include ActiveModel::Validations
-
-        options[:accessors].each do |column|
-          attr_accessor column.to_sym
-        end
-
-        class_eval(&block) if block_given?
-      end
-    end
-
     def define_model(name, columns = {}, &block)
       class_name = name.to_s.pluralize.classify
       table_name = class_name.tableize
