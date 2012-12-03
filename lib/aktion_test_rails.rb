@@ -1,3 +1,5 @@
+require 'rspec-rails'
+require 'rspec/rails'
 require 'factory_girl_rails'
 require 'faker'
 require 'shoulda-matchers'
