@@ -16,6 +16,11 @@ module AktionTestRails
       extend ActiveSupport::Autoload
       autoload :RackApp
     end
+
+    module Rails
+      extend ActiveSupport::Autoload
+      autoload :ModelBuilder
+    end
   end
 
   module Matchers
@@ -34,7 +39,7 @@ module AktionTestRails
     ActiveSupport.on_load(:aktion_test_rails_matchers_active_admin) do
       module FactoryGirl
         extend ActiveSupport::Autoload
-        autoload :FactoryValidation
+        autoload :Validation
       end
     end
   end
