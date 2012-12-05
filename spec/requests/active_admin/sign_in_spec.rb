@@ -19,7 +19,7 @@ describe AktionTestRails::Support::ActiveAdmin::Request::SignIn do
   it "should create and sign in an admin user" do
     sign_in_active_admin
     page.should have_content "Signed in successfully."
-    jurrent_path.should == '/admin'
+    current_path.should == '/admin'
   end
 
   it "should create an admin user" do
