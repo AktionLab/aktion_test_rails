@@ -1,10 +1,41 @@
-require 'rspec-rails'
-require 'rspec/rails'
-require 'factory_girl_rails'
 require 'faker'
-require 'shoulda-matchers'
 require 'aktion_test'
 require "aktion_test_rails/version"
-require 'aktion_test_rails/matchers'
-require 'aktion_test_rails/model_builder'
-require 'aktion_test_rails/active_admin/request/sign_in'
+
+require 'active_support/dependencies/autoload'
+require 'active_support/concern'
+require 'active_support/lazy_load_hooks'
+
+module AktionTestRails
+  extend ActiveSupport::Autoload
+  
+  autoload :ModelBuilder
+
+  module Support
+    module Capybara
+      extend ActiveSupport::Autoload
+      autoload :RackApp
+    end
+  end
+
+  module Matchers
+    extend ActiveSupport::Autoload
+    
+    autoload :ActiveAdmin
+    autoload :FactoryGirl
+
+    ActiveSupport.on_load(:aktion_test_rails_matchers_active_admin) do
+      module ActiveAdmin
+        extend ActiveSupport::Autoload
+        autoload :Flash
+      end
+    end
+
+    ActiveSupport.on_load(:aktion_test_rails_matchers_active_admin) do
+      module FactoryGirl
+        extend ActiveSupport::Autoload
+        autoload :FactoryValidation
+      end
+    end
+  end
+end
