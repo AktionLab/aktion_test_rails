@@ -6,7 +6,7 @@ module AktionTestRails
           ValidFactoryMatcher.new(factory_name)
         end
 
-        class ValidFactoryMatcher
+        class ValidFactoryMatcher < AktionTest::Matchers::Base
           def initialize(factory_name)
             @factory_name = factory_name
           end
@@ -15,19 +15,26 @@ module AktionTestRails
             factory_exists? && factory_creates_valid_record?
           end
 
-          def failure_message
-            message = "Expected :#{@factory_name} to be a valid factory."
+          def expectation
+            ":#{@factory_name} to be a valid factory."
+          end
+
+          def problem
+            message = "\n"
             if factory_exists?
               if @record.errors.full_messages.any?
-                message << "\n  Failed Validations:"
+                message << "Failed Validations:\n"
                 @record.errors.full_messages.each do |error|
-                  message << "\n    #{error}"
+                  message << "  #{error}\n"
                 end
               end
             else
-              message << "\n  No factory by the name :#{@factory_name} found"
+              message << "No factory by the name :#{@factory_name} found\n"
             end
             message
+          end
+
+          def negative_problem
           end
 
           def description

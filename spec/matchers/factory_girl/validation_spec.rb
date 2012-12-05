@@ -34,11 +34,11 @@ describe AktionTestRails::Matchers::FactoryGirl::Validation do
 
     it "says that the factory does not exist" do
       matcher = have_valid_factory(:user).tap{|m| m.matches?(User.new)}
-      expected_message = <<-ERROR.strip_heredoc.strip
+      matcher.failure_message.should == <<-MSG.strip_heredoc
         Expected :user to be a valid factory.
-          No factory by the name :user found
-      ERROR
-      matcher.failure_message.should == expected_message.strip
+
+        No factory by the name :user found
+      MSG
     end
   end
 
@@ -60,12 +60,12 @@ describe AktionTestRails::Matchers::FactoryGirl::Validation do
 
     it "should detail validation errors with the factory" do
       matcher = have_valid_factory(:user).tap{|m| m.matches?(User.new)}
-      expected_message = <<-ERROR.strip_heredoc.strip
+      matcher.failure_message.should == <<-MSG.strip_heredoc
         Expected :user to be a valid factory.
-          Failed Validations:
-            Name can't be blank
-      ERROR
-      matcher.failure_message.should == expected_message.strip
+        
+        Failed Validations:
+          Name can't be blank
+      MSG
     end
   end
 end

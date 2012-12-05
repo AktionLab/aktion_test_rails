@@ -35,20 +35,20 @@ module AktionTestRails
           end
 
           def problem
-            message = ""
+            message = "\n"
             unless has_flash?
               if @page.has_selector? '.flash'
-                message << "\nFound a flash #{find_flash_type}."
+                message << "Found a flash #{find_flash_type}.\n"
               else
-                message << "\nNo flash was found."
+                message << "No flash was found.\n"
               end
             end
             unless has_flash_message?
               if @page.has_selector? '.flash'
-                message << "\nexpected: #{@message}\n     got: #{flash_message}"
+                message << "expected: #{@message}\n     got: #{flash_message}\n"
               end
             end
-            "#{message}\n"
+            message
           end
 
           def negative_problem
