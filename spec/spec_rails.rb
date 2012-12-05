@@ -1,6 +1,5 @@
 TESTAPP_ROOT = File.join(File.dirname(__FILE__), 'rails_app')
 PROJECT_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..')).freeze
-ENV['BUNDLE_GEMFILE'] = "#{TESTAPP_ROOT}/Gemfile"
 
 $:.unshift File.dirname(__FILE__)
 $:.unshift File.join(PROJECT_ROOT, 'lib')
