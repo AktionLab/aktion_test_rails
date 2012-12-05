@@ -5,6 +5,11 @@ require 'simplecov'
 SimpleCov.start do
   add_filter '/tmp/'
   add_filter '/spec/'
+  add_filter '/lib/aktion_test_rails/matchers/factory_girl.rb'
+  add_filter '/lib/aktion_test_rails/matchers/active_admin.rb'
+  add_filter '/lib/aktion_test_rails/support/active_admin/request.rb'
+  add_filter '/lib/aktion_test_rails/rails.rb'
+  add_filter '/lib/aktion_test_rails.rb'
   minimum_coverage 100
 end
 
