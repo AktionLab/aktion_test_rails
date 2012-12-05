@@ -23,15 +23,4 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'poltergeist', '~> 1.0.2'
   gem.add_dependency 'launchy', '~> 2.1.2'
   gem.add_dependency 'shoulda-matchers', '~> 1.4.1'
-
-  gem.add_development_dependency 'appraisal', '~> 0.5.1'
-  gem.add_development_dependency 'rails', '~> 3.2.9'
-  gem.add_development_dependency 'activeadmin', '~> 0.5.0'
-  gem.add_development_dependency 'therubyracer', '~> 0.11.0'
-  gem.add_development_dependency 'libv8', '~> 3.11.8'
-  gem.add_development_dependency 'coffee-rails', '~> 3.2.1'
-  gem.add_development_dependency 'sass-rails', '~> 3.2.3'
-  gem.add_development_dependency 'uglifier', '>= 1.0.3'
-  gem.add_development_dependency 'sqlite3'
-  gem.add_development_dependency 'jquery-rails'
 end
