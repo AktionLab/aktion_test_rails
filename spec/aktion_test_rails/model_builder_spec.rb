@@ -1,6 +1,9 @@
-require 'spec_helper'
+require 'spec_base'
+require 'spec_active_record'
 
-describe AktionTestRails::ModelBuilder do
+describe AktionTestRails::Support::Rails::ModelBuilder do
+  include described_class
+
   describe '#create_table' do
     it "creates a table" do
       create_table('test_table')
