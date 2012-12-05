@@ -1,5 +1,3 @@
-require 'aktion_test_rails/matchers/factory_girl/have_a_valid_factory'
-
 module AktionTestRails
   module Matchers
     # = Matchers for FactoryGirl factories
@@ -11,6 +9,13 @@ module AktionTestRails
     #   end
     #
     module FactoryGirl
+      extend ActiveSupport::Concern
+
+      included do
+        include Validation
+      end
     end
   end
 end
+
+ActiveSupport.run_load_hooks(:aktion_test_rails_matchers_active_admin)
