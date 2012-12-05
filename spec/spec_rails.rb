@@ -8,8 +8,6 @@ $:.unshift File.join(PROJECT_ROOT, 'lib')
 require "rails_app/config/environment"
 require 'aktion_test_rails/rails'
 
-Dir[File.join(File.dirname(__FILE__), 'factories', '*.rb')].each {|file| require file}
-
 I18n.load_path << File.join(TESTAPP_ROOT, 'config/locales/en.yml')
 I18n.load_path << File.join(TESTAPP_ROOT, 'config/locales/devise.en.yml')
 

@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'spec_base'
+require 'spec_rails'
 
-describe AktionTestRails::ActiveAdmin::Request::SignIn do
+describe AktionTestRails::Support::ActiveAdmin::Request::SignIn do
   include described_class
 
   before(:each) do
@@ -18,7 +19,7 @@ describe AktionTestRails::ActiveAdmin::Request::SignIn do
   it "should create and sign in an admin user" do
     sign_in_active_admin
     page.should have_content "Signed in successfully."
-    current_path.should == '/admin'
+    jurrent_path.should == '/admin'
   end
 
   it "should create an admin user" do

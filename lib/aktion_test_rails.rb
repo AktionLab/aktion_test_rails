@@ -21,6 +21,18 @@ module AktionTestRails
       extend ActiveSupport::Autoload
       autoload :ModelBuilder
     end
+
+    module ActiveAdmin
+      extend ActiveSupport::Autoload
+      autoload :Request
+
+      ActiveSupport.on_load(:aktion_test_rails_support_active_admin_request) do
+        module Request
+          extend ActiveSupport::Autoload
+          autoload :SignIn
+        end
+      end
+    end
   end
 
   module Matchers
