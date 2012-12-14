@@ -21,7 +21,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+By default requiring aktion_test_rails will only setup some constants for lazy loading.
+
+    require 'aktion_test_rails/load'
+
+Adding that line to your testing bootstrap (ie spec/test helper) will load up the full
+testing environment. Most everything else can be lazy loaded on a per spec basis using
+includes.
+
+    describe SomeClass do
+      include AktionTestRails::Support:Rails::ModelBuilder
+    end
 
 ## Contributing
 
