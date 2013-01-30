@@ -3,23 +3,25 @@ module AktionTestRails
     module FactoryGirl
       module Validation
         def have_valid_factory(factory_name)
-          ValidFactoryMatcher.new(factory_name)
+          Matcher.new(factory_name)
         end
 
-        class ValidFactoryMatcher < AktionTest::Matchers::Base
+        class Matcher < AktionTest::Matchers::Base
           def initialize(factory_name)
             @factory_name = factory_name
           end
 
-          def matches?(subject)
-            factory_exists? && factory_creates_valid_record?
+          def description
+            "has a valid factory named :#{@factory_name}"
           end
+
+        protected
 
           def expectation
             ":#{@factory_name} to be a valid factory."
           end
 
-          def problem
+          def problems_for_should
             message = "\n"
             if factory_exists?
               if @record.errors.full_messages.any?
@@ -31,17 +33,15 @@ module AktionTestRails
             else
               message << "No factory by the name :#{@factory_name} found\n"
             end
-            message
+            message.chomp
           end
 
-          def negative_problem
+          def problems_for_should_not
           end
 
-          def description
-            "has a valid factory named :#{@factory_name}"
+          def perform_match!
+            factory_exists? && factory_creates_valid_record?
           end
-
-        protected
 
           def factory_exists?
             ::FactoryGirl.factories.registered?(@factory_name)
