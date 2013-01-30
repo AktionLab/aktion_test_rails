@@ -1,3 +1,9 @@
+# v0.2.1
+
+* Update matchers to work with new base matcher
+* Upgrade to aktion test 0.2.x
+* Create modules to use with new spec helper loader
+
 # v0.2.0
 
 * ActiveAdmin request spec sign in support
