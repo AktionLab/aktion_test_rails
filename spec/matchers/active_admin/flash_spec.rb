@@ -1,4 +1,4 @@
-require 'spec_base'
+require 'spec_helper'
 
 describe AktionTestRails::Matchers::ActiveAdmin::Flash do
   include described_class

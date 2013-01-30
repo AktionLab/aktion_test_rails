@@ -1,5 +1,4 @@
-require 'spec_base'
-require 'spec_active_record'
+require 'spec_helper'
 
 describe AktionTestRails::Support::Rails::ModelBuilder do
   include described_class

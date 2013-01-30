@@ -1,5 +1,4 @@
-require 'spec_base'
-require 'spec_rails'
+require 'spec_helper'
 
 describe AktionTestRails::Support::ActiveAdmin::Request::SignIn do
   include described_class

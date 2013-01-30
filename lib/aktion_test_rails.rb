@@ -1,15 +1,32 @@
 require 'faker'
 require 'aktion_test'
+require 'aktion_test/matchers/base'
 require "aktion_test_rails/version"
 
-require 'active_support/dependencies/autoload'
-require 'active_support/concern'
 require 'active_support/lazy_load_hooks'
+  
+module AktionTest
+  module Module
+    extend ActiveSupport::Autoload
+
+    autoload :Rails
+
+    ActiveSupport.on_load(:aktion_test_module_rails) do
+      module Rails
+        extend ActiveSupport::Autoload
+
+        autoload :Capybara
+        autoload :FactoryGirl
+        autoload :RSpec, 'aktion_test/module/rails/rspec'
+        autoload :ShouldaMatchers
+        autoload :Simplecov
+      end
+    end
+  end
+end
 
 module AktionTestRails
   extend ActiveSupport::Autoload
-  
-  autoload :ModelBuilder
 
   module Support
     module Capybara

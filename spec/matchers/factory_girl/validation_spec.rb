@@ -1,6 +1,4 @@
-require 'spec_base'
-require 'spec_active_record'
-require 'factory_girl_rails'
+require 'spec_helper'
 
 describe AktionTestRails::Matchers::FactoryGirl::Validation do
   include described_class
