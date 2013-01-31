@@ -11,8 +11,8 @@ module AktionTestRails
     module FactoryGirl
       extend ActiveSupport::Concern
 
-      included do
-        include Validation
+      included do |base|
+        base.send :include, Validation
       end
     end
   end
