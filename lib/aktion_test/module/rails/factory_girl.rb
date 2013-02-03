@@ -1,15 +1,18 @@
 module AktionTest
   module Module
-    module Rails
-      module FactoryGirl
-        extend ActiveSupport::Concern
+    class Rails
+      class FactoryGirl < Base
+        def initialize(spec, options={})
+          super
+        end
 
-        included do |spec_helper|
+        def prepare
           require 'factory_girl_rails'
+        end
 
-          ::RSpec.configure do |config|
-            config.include AktionTestRails::Matchers::FactoryGirl, type: :model
-          end
+        def configure
+          rspec.include ::FactoryGirl::Syntax::Methods
+          rspec.include AktionTestRails::Matchers::FactoryGirl, type: :model
         end
       end
     end

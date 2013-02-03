@@ -1,10 +1,9 @@
 module AktionTest
   module Module
     class Rails
-      class Simplecov < Base
+      class AktionTest < Base
         def initialize(spec, options={})
-          require 'simplecov'
-          ::SimpleCov.start 'rails'
+          spec.use ::AktionTest::Module::AktionTest
           super
         end
       end

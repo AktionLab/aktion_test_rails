@@ -1,10 +1,6 @@
-require 'faker'
 require 'aktion_test'
-require 'aktion_test/matchers/base'
 require "aktion_test_rails/version"
 
-require 'active_support/lazy_load_hooks'
-  
 module AktionTest
   module Module
     extend ActiveSupport::Autoload
@@ -12,9 +8,10 @@ module AktionTest
     autoload :Rails
 
     ActiveSupport.on_load(:aktion_test_module_rails) do
-      module Rails
+      class Rails
         extend ActiveSupport::Autoload
 
+        autoload :AktionTest
         autoload :Capybara
         autoload :FactoryGirl
         autoload :RSpec, 'aktion_test/module/rails/rspec'

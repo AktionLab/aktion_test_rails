@@ -3,7 +3,7 @@ require 'spec_helper'
 describe AktionTestRails::Support::ActiveAdmin::Request::SignIn do
   include described_class
 
-  before(:each) do
+  before(:all) do
     unless FactoryGirl.factories.registered?(:admin_user)
       FactoryGirl.define do
         factory :admin_user do

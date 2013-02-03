@@ -1,17 +1,20 @@
 module AktionTest
   module Module
-    module Rails
-      module RSpec
-        extend ActiveSupport::Concern
+    class Rails
+      class RSpec < Base
+        def initialize(spec, options={})
+          spec.use ::AktionTest::Module::RSpec
+          super
+        end
 
-        included do |spec_helper|
+        def prepare
           require 'rspec/rails'
+        end
 
-          ::RSpec.configure do |config|
-            config.fixture_path = "#{::Rails.root}/spec/fixtures"
-            config.use_transactional_fixtures = true
-            config.infer_base_class_for_anonymous_controllers = false
-          end
+        def configure
+          rspec.fixture_path = "#{::Rails.root}/spec/fixtures"
+          rspec.use_transactional_fixtures = true
+          rspec.infer_base_class_for_anonymous_controllers = false
         end
       end
     end

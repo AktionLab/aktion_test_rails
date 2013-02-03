@@ -15,12 +15,13 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = AktionTestRails::VERSION
 
-  gem.add_dependency 'aktion_test', '~> 0.2.1'
-  gem.add_dependency 'rspec-rails', '~> 2.12.0'
-  gem.add_dependency 'factory_girl_rails', '~> 4.1.0'
-  gem.add_dependency 'database_cleaner', '~> 0.9.1'
-  gem.add_dependency 'capybara', '~> 1.1.3'
-  gem.add_dependency 'poltergeist', '~> 1.0.2'
-  gem.add_dependency 'launchy', '~> 2.1.2'
-  gem.add_dependency 'shoulda-matchers', '~> 1.4.1'
+  gem.add_dependency 'activesupport',      '~> 3.2.11'
+  gem.add_dependency 'aktion_test',        '~> 0.3.0'
+  gem.add_dependency 'rspec-rails',        '~> 2.12.0'
+  gem.add_dependency 'factory_girl_rails', '~> 4.2.0'
+  gem.add_dependency 'database_cleaner',   '~> 0.9.1'
+  gem.add_dependency 'capybara',           '~> 1.1.3'
+  gem.add_dependency 'poltergeist',        '~> 1.0.2'
+  gem.add_dependency 'launchy',            '~> 2.1.2'
+  gem.add_dependency 'shoulda-matchers',   '~> 1.4.1'
 end
