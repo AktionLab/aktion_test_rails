@@ -1,3 +1,7 @@
+# v0.3.0
+
+* Update modules to use new spec helper interface
+
 # v0.2.1
 
 * Update matchers to work with new base matcher
