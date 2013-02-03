@@ -1,5 +1,6 @@
 # AktionTestRails
 
+[![Code Climate](https://codeclimate.com/github/AktionLab/aktion_test_rails.png)](https://codeclimate.com/github/AktionLab/aktion_test_rails)
 [![Build Status](https://secure.travis-ci.org/AktionLab/aktion_test_rails.png?branch=master)](https://travis-ci.org/AktionLab/aktion_test_rails)
 [![Dependency Status](https://gemnasium.com/AktionLab/aktion_test_rails.png)](https://gemnasium.com/AktionLab/aktion_test_rails)
 
